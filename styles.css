@@ -589,6 +589,180 @@ footer {
   padding: 0 1rem;
 }
 
+/* ── GTM Tools Page ── */
+.gtm-page { padding-top: 10rem; }
+.gtm-page .section-lead { margin-bottom: 3.5rem; }
+
+/* Tabs */
+.tabs { max-width: 760px; }
+.tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+.tab-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.9rem 1.25rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-2);
+  position: relative;
+  transition: color 0.2s;
+}
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  left: 0.25rem;
+  right: 0.25rem;
+  bottom: -1px;
+  height: 2px;
+  background: transparent;
+  transition: background 0.2s;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--text); }
+.tab-btn.active::after { background: var(--accent); }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.tool-desc {
+  font-size: 1rem;
+  color: var(--text-2);
+  max-width: 620px;
+  margin-bottom: 2.25rem;
+}
+
+/* ICP Research form */
+.icp-form { max-width: 620px; margin-bottom: 2rem; }
+.icp-form label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+.icp-form-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.icp-form-row input[type="text"] {
+  flex: 1;
+  min-width: 220px;
+  background: var(--ph-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.icp-form-row input[type="text"]::placeholder { color: var(--ph-text); }
+.icp-form-row input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.icp-form-row .btn {
+  border: none;
+  font-family: inherit;
+}
+.icp-form-row .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading state */
+.icp-status {
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-2);
+  margin-bottom: 2rem;
+}
+.icp-status:not([hidden]) { display: flex; }
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Error state */
+.icp-error {
+  background: rgba(196, 84, 31, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--stone);
+  max-width: 620px;
+  margin-bottom: 2rem;
+}
+
+/* Results */
+.icp-results {
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 760px;
+}
+.icp-results:not([hidden]) { display: flex; }
+.icp-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem;
+}
+.icp-section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+.icp-section-body p {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+}
+.icp-section-body p:last-child { margin-bottom: 0; }
+.icp-section-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.icp-section-body ul:last-child { margin-bottom: 0; }
+.icp-section-body li {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.65;
+  padding-left: 1.1rem;
+  position: relative;
+}
+.icp-section-body li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .work-grid { grid-template-columns: 1fr; max-width: 480px; }
@@ -637,6 +811,9 @@ footer {
   .cs-nav { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
   .cs-nav-link.next { align-items: flex-start; }
   .about-page { padding-top: 7rem; }
+  .gtm-page { padding-top: 7rem; }
   .cs-meta { gap: 1.5rem; }
   .btn-ghost { margin-left: 0; }
+  .icp-form-row { flex-direction: column; align-items: stretch; }
+  .icp-form-row .btn { margin-left: 0; }
 }

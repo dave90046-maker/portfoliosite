@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM Tools — David Smith</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="https://davidsmithdesigns.com/" class="nav-logo">David <span>Smith</span></a>
+    <ul class="nav-links">
+      <li><a href="https://davidsmithdesigns.com/">Home</a></li>
+      <li><a href="index.html#selected-work">Selected Work</a></li>
+      <li><a href="gtm-tools.html">GTM Tools</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- GTM TOOLS -->
+  <section class="gtm-page">
+    <div class="container">
+      <p class="eyebrow">GTM Tools</p>
+      <h1 class="section-title">GTM Tools</h1>
+      <p class="section-lead">A suite of AI-powered marketing tools built to demonstrate how modern GTM teams can use Claude to accelerate strategy and execution.</p>
+
+      <div class="tabs">
+        <div class="tab-list" role="tablist">
+          <button type="button" class="tab-btn active" id="tab-icp-research" role="tab" aria-selected="true" aria-controls="panel-icp-research" data-tab="icp-research">ICP Research</button>
+        </div>
+
+        <div class="tab-panels">
+
+          <!-- ICP Research -->
+          <div class="tab-panel active" id="panel-icp-research" role="tabpanel" aria-labelledby="tab-icp-research" data-tab-panel="icp-research">
+            <p class="tool-desc">Enter a company name to generate a structured ideal customer profile and outreach brief.</p>
+
+            <form class="icp-form" id="icp-form" novalidate>
+              <label for="company-name">Company name</label>
+              <div class="icp-form-row">
+                <input type="text" id="company-name" name="company" placeholder="e.g. Acme Corp" autocomplete="off" required />
+                <button type="submit" class="btn btn-accent" id="icp-submit">Generate Research Brief</button>
+              </div>
+            </form>
+
+            <div class="icp-status" id="icp-status" hidden>
+              <span class="spinner" aria-hidden="true"></span>
+              <span>Generating research brief…</span>
+            </div>
+
+            <div class="icp-error" id="icp-error" hidden></div>
+
+            <div class="icp-results" id="icp-results" hidden></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">Let's talk.</h2>
+        <p class="contact-sub">I'm currently exploring senior marketing, brand, and creative leadership roles. If you're building something where range and execution both matter, I'd love to connect.</p>
+        <a href="mailto:dave90046@gmail.com" class="contact-email">dave90046@gmail.com</a>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/david-smith-4bb11ba/" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
+          <span class="contact-sep">·</span>
+          <a href="index.html#selected-work" class="contact-link">Selected Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 David Smith. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="gtm-tools.js"></script>
+</body>
+</html>
